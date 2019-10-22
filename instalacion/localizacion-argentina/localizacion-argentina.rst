@@ -2,7 +2,7 @@
 Localización Argentina de Odoo en Docker
 ######################################################
 
-Los siguientes pasos indican como crear un entorno para ejecutar Odoo 11 (localización argentina) en docker.
+Los siguientes pasos indican como crear un entorno para ejecutar Odoo 12 (localización argentina) en docker.
 
 El tutorial esta verificado en una máquina virtual linux Ubuntu 16.04 server.
 Igualmente, debería funcionar correctamente en cualquier distribución de linux con docker 
@@ -27,14 +27,14 @@ https://docs.docker.com/compose/install/
    $ cd ~ 
    $ git clone https://github.com/juanpgarza/odoo-dev.git
 
-4.  **Clonar repositorio de Odoo 11** 
+4.  **Clonar repositorio de Odoo 12** 
 
 .. code-block:: console
 
-   $ cd odoo-dev/11/proyecto1
+   $ cd odoo-dev/12/proyecto1
    $ sudo mkdir src/
    $ cd src/
-   $ sudo git clone https://github.com/odoo/odoo.git --branch 11.0 --depth 1 --single-branch .
+   $ sudo git clone https://github.com/odoo/odoo.git --branch 12.0 --depth 1 --single-branch .
 
 5.  **Clonar módulos de la localización argentina** 
 
@@ -42,22 +42,22 @@ https://docs.docker.com/compose/install/
 
    $ sudo mkdir addons-ar
    $ cd addons-ar
-   $ sudo git clone https://github.com/ingadhoc/odoo-argentina.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/account-financial-tools.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/account-payment.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/aeroo_reports.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/miscellaneous.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/argentina-reporting.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/reporting-engine.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/argentina-sale.git --depth 1 --branch 11.0 --single-branch && \
-   sudo git clone https://github.com/ingadhoc/stock.git --depth 1 --branch 11.0 --single-branch
+   $ sudo git clone https://github.com/ingadhoc/odoo-argentina.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/account-financial-tools.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/account-payment.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/aeroo_reports.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/miscellaneous.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/argentina-reporting.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/reporting-engine.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/argentina-sale.git --depth 1 --branch 12.0 --single-branch && \
+   sudo git clone https://github.com/ingadhoc/stock.git --depth 1 --branch 12.0 --single-branch
 
 6.  **Generar la imagen de docker con la localización argentina** 
 
 .. code-block:: console
 
-   $ cd ~/odoo-dev/11/proyecto1
-   $ docker build -t img_odoo_11_ar .
+   $ cd ~/odoo-dev/12/proyecto1
+   $ docker build -t img_odoo_12_ar .
 
 7.  **Copiar archivo de configuración de Odoo** 
 
@@ -69,7 +69,7 @@ https://docs.docker.com/compose/install/
 
 .. code-block:: console
 
-   $ cd ~/odoo-dev/11/proyecto1
+   $ cd ~/odoo-dev/12/proyecto1
    $ docker-compose up -d
 
 Ahora ya podemos acceder a Odoo desde:
@@ -84,5 +84,5 @@ Esto es porque se crea una base de datos inicial llamada odoo.
 .. code-block:: console
 
    $ docker ps
-   $ docker logs -f cont_odoo_11-proy1
+   $ docker logs -f cont_odoo_12-proy1
 
